@@ -14,7 +14,11 @@ module.exports = commonEnv.getOrElseAll({
         port: 5432,
         user: "",
         password: "",
-        database: "",
+        database: {
+            based: "",
+            porte: "",
+            sedatif: ""
+        },
     },
     jwt: "",
 });
