@@ -1,5 +1,5 @@
 const express = require('express');
-const models = require('../model/based');
+const handlers = require('../handlers/based.js');
 
 const router = express.Router();
 router.get('/', (req, res) => {
@@ -9,8 +9,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/eclairage/horaires/:date',async (req, res) => {
-  console.log(req.params.date);
-  res.json(await models.getEclairage(req.params.date));
+  const rows = await handlers.getEclairage(req.params.date);
+  if(rows.length > 0) {
+    res.status(200);
+    res.json(rows);
+  }else{
+    res.status(404).send('There is no value for this date.');
+  }
 })
 
 

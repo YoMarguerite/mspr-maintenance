@@ -9,6 +9,8 @@ const clientBased = new Client({
     port: settings.postgresql.port,
 });
 
+clientBased.connect();
+
 const clientPorte = new Client({
     user: settings.postgresql.user,
     host: settings.postgresql.host,
@@ -17,6 +19,8 @@ const clientPorte = new Client({
     port: settings.postgresql.port,
 });
 
+clientPorte.connect();
+
 const clientSedatif = new Client({
     user: settings.postgresql.user,
     host: settings.postgresql.host,
@@ -24,5 +28,7 @@ const clientSedatif = new Client({
     password: settings.postgresql.password,
     port: settings.postgresql.port,
 });
+
+clientSedatif.connect();
 
 module.exports = {clientBased, clientPorte, clientSedatif};
