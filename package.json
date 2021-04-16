@@ -25,7 +25,6 @@
     "common-env": "^6.4.0",
     "dotenv": "^8.2.0",
     "log4js": "^6.3.0",
-    "node-postgres": "^0.6.2",
     "pg": "^8.6.0"
   },
   "devDependencies": {
